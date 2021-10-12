@@ -34,7 +34,11 @@ changeJumbotronBackground()
 // TODO: 
 
 const removeLinksUnderElsewhere = () => {
-
+    const elsewhereSection = document.querySelectorAll('aside h4 + ol')[1]
+    const elsewhereSectionLinks = elsewhereSection.childNodes
+    elsewhereSectionLinks.forEach(link => {
+        link.remove()
+    })
 }
 
 removeLinksUnderElsewhere()
@@ -51,13 +55,29 @@ changeJumbotronHeadingColumnSize()
 
 // EX16) Write a function to remove the "Search" magnifying glass icon
 
+const removeSearchIcon = () => {
+    const searchIcon = document.querySelector('header svg')
+    searchIcon.remove()
+}
 
-
+removeSearchIcon()
 
 // EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
 
+const trimFirst50CharactersInBlog = () => {
+    const blogPostsFirstParagraph = document.querySelectorAll('.blog-post-meta + p')
+    blogPostsFirstParagraph.forEach(blog => {
+        const blogFirstParagraph = blog.innerText
+        const blogPostArray = blogFirstParagraph.split('')
+            for (let i = 0; i < 50; i++) {
+                blogPostArray.shift()
+            }
+            const trimmedBlogPost = blogPostArray.join('')
+            blog.innerText = trimmedBlogPost
+    })
+}
 
-
+trimFirst50CharactersInBlog()
 
 // EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
 
@@ -82,8 +102,17 @@ addNewBlogPost()
 
 // EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
 
+const removeLastBlogPost = () => {
+    const removeBlogButton = document.querySelector('.blog-pagination a:first-child')
+    removeBlogButton.addEventListener('click', removeLastBlog)
+}
 
+const removeLastBlog = () => {
+    const lastBlogPost = document.querySelector('.blog-post:last-of-type')
+    lastBlogPost.remove()
+}
 
+removeLastBlogPost()
 
 // EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
 
