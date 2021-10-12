@@ -9,6 +9,67 @@ EX8) Write a selector to target the second post author
 EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
 EX10) Write a selector to target the footer */
 
+/* EX 1 */
+
 .jumbotron h1 {
   color: red;
+}
+
+/* EX 2 */
+
+nav.nav a {
+  color: blue !important;
+}
+
+/* EX 3 */
+
+.jumbotron a {
+  color: red !important;
+}
+
+/* EX 4 */
+
+.blog-post:first-of-type {
+  background-color: #3e3e3e;
+  color: white;
+}
+
+/* EX 5 */
+
+nav.nav a:nth-child(even) {
+  color: #3e3e3e !important;
+}
+
+/* EX 6 */
+
+.blog-post:last-of-type {
+  background-color: #3e3e3e;
+  color: white;
+}
+
+/* TODO: EX 7 */
+/* .blog-sidebar h4 + ol:first-of-type {
+  background-color: red;
+} */
+
+.list-unstyled:first-of-type {
+  background-color: red;
+}
+
+/* EX 8 */
+
+.blog-post:nth-of-type(2) .blog-post-meta a {
+  font-size: 2.5rem;
+}
+
+/* EX 9 */
+
+.blog-footer p:last-of-type a:last-child {
+  background-color: red;
+}
+
+/* EX 10 */
+
+footer {
+  background-color: lightgrey;
 }
